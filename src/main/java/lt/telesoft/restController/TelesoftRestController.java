@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import lt.telesoft.gildedrose.GildedRoseHelper;
+import lt.telesoft.gildedrose.GildedRoseController;
 import lt.telesoft.gildedrose.Item;
 import lt.telesoft.repository.TelesoftItemRepository;
 
@@ -61,7 +61,7 @@ public class TelesoftRestController
 	private void updateGildedRoseItem(final HttpServletResponse response) throws IOException
 	{
 		final List<Item> items = telesoftItemRepository.findAll();
-		items.stream().map(item -> GildedRoseHelper.getUpdatedGildedRose(new Item[] { item }))
+		items.stream().map(item -> GildedRoseController.getUpdatedGildedRose(new Item[] { item }))
 				.collect(Collectors.toList()).toString();
 		response.sendRedirect(REDIRECT_HOMEPAGE);
 	}
