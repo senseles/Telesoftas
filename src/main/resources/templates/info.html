@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Boot Thymeleaf Hello World Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css"
+              href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" th:href="@{/css/main.css}"
+              href="../../css/main.css"/>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Gilded Rose</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="/info">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="starter-template">
+
+                <form action="/api/find/all">
+                    <button type="submit">Get All</button>
+                </form>
+
+                <form action="/api/find/one">
+                    <input type="number" name="id"/>
+                    <button type="submit">Find By ID</button>
+                </form>
+
+                <form action="/api/find/byName">
+                    <input name="name"/>
+                    <button type="submit">Find By Name</button>
+                </form>
+            </div>
+
+        </div>
+        <script type="text/javascript"
+                src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

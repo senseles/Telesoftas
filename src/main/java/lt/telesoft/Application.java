@@ -31,4 +31,9 @@ public class Application extends SpringBootServletInitializer
 		return "index";
 	}
 
+	@RequestMapping("/info")
+	public String getInfoPage(final Map<String, Object> model)
+	{
+		return "info";
+	}
 }
